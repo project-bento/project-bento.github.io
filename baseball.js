@@ -1,5 +1,11 @@
 var CONFIG_POOL = new Set([1,2,3,4,5,6,7,8,9]);
 var CONFIG_NUM_DIGIT = 3;
+var game_pool = new Array();
+var game_all_pool = get_pool();
+var game_history = new Array();
+var game_used = new Set();
+var history = "";
+var potential = new Array();
 
 function is_allowed_number(number)
 {
@@ -41,12 +47,6 @@ function get_pool()
     return pool;
 }
 
-var game_pool = new Array();
-var game_all_pool = get_pool();
-var game_history = new Array();
-var game_used = new Set();
-
-var potential = new Array();
 for (var i = 0; i <= CONFIG_NUM_DIGIT; i++)
 {
     for (var j = 0; j <= CONFIG_NUM_DIGIT; j++)
@@ -254,16 +254,17 @@ function execute()
         mainForm.input_S.value = "";
         mainForm.input_B.value = "";
 
-        var result = result_formatter(s_input, b_input);
+		for(var i = 0; i < game_pool.length; i++)
+			history ="\n" + q_input + " - " + result_formatter(s_input, b_input);
 
-		mainForm.history.value = q_input + " - " + result;
+		mainForm.history.value = history;
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
         {
             game_used.add(parseInt(q_input % 10));
             q_input /= 10;
         }
-        calc_best_question()
+        calc_best_question();
     }
     catch(e)
     {
@@ -285,6 +286,7 @@ function reset_game()
     mainForm.txt_answer.value = "";
     game_pool = get_pool();
     game_used = new Set();
+	history = "";
     calc_best_question();
 }
 
