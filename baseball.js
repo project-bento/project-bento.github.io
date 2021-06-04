@@ -254,7 +254,7 @@ function execute()
         mainForm.input_S.value = "";
         mainForm.input_B.value = "";
 
-		for(var i = 0; i < game_pool.length; i++)
+		for(var i = 0; i < game_all_pool.length; i++)
 		{
 			history = q_input + " - " + result_formatter(s_input, b_input) + "\n";
 		}
