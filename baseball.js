@@ -4,7 +4,7 @@ var game_pool = new Array();
 var game_all_pool = get_pool();
 var game_history = new Array();
 var game_used = new Set();
-var history = "";
+var hist = "";
 var potential = new Array();
 
 function is_allowed_number(number)
@@ -256,9 +256,9 @@ function execute()
 
 		for(var i = 0; i < game_pool.length; i++)
 		{
-			history = ""+ q_input + " - " + result_formatter(s_input, b_input) + "\n";
+			hist = q_input + " - " + result_formatter(s_input, b_input) + "\n";
 		}
-		mainForm.history.value = history;
+		mainForm.history.value = hist;
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
         {
@@ -287,7 +287,7 @@ function reset_game()
     mainForm.txt_answer.value = "";
     game_pool = get_pool();
     game_used = new Set();
-	history = "";
+	hist = "";
     calc_best_question();
 }
 
