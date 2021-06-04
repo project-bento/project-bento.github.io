@@ -255,8 +255,9 @@ function execute()
         mainForm.input_B.value = "";
 
 		for(var i = 0; i < game_pool.length; i++)
-			history ="\n" + q_input + " - " + result_formatter(s_input, b_input);
-
+		{
+			history = q_input + " - " + result_formatter(s_input, b_input) + "\n";
+		}
 		mainForm.history.value = history;
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
