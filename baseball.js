@@ -254,11 +254,8 @@ function execute()
         mainForm.input_S.value = "";
         mainForm.input_B.value = "";
 
-		for(var i = 0; i < game_pool.length; i++)
-		{
-			hist = q_input + " - " + result_formatter(s_input, b_input) + "\n";
-		}
-		mainForm.history.value = q_input + " - " + result_formatter(s_input, b_input);
+
+		mainForm.history.value = q_input + " - " + result_formatter(s_input, b_input) + "\n";
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
         {
