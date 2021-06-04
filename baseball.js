@@ -254,8 +254,11 @@ function execute()
         mainForm.input_S.value = "";
         mainForm.input_B.value = "";
 
-
-		mainForm.history.value = "FUCK";
+		for(var i = 0; i < game_pool.length; i++)
+		{
+			hist = "FUCK\n";
+		}
+		mainForm.history.value = hist;
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
         {
