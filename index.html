@@ -25,10 +25,17 @@
                     <input type="button" id="btn_execute" value="Add" onclick="execute()" style="font-size:40;">
                     <br>
 					<p>&nbsp;</p>
-                    <input type="Text" id = "input_S" size=1 maxlength="1" style="font-size:40;">
-                    <label for="html" style="font-size:40;">◯</label>
-                    <input type="Text" id = "input_B" size=1  maxlength="1" style="font-size:40;">
-                    <label for="html" style="font-size:40;">△</label>
+					<select class='guess-result-circles' id= "input_S">
+						<option value='0'>0◯</option>
+						<option value='1'>1◯</option>
+						<option value='2'>2◯</option>
+					</select>
+					<select class='guess-result-triangles' id= "input_B">
+						<option value='0'>0△</option>
+						<option value='1'>1△</option>
+						<option value='2'>2△</option>
+						<option value='3'>3△</option>
+					</select>
                     <p>&nbsp;</p>
 					<p>&nbsp;</p>
 					<input type="button" id="btn_Reset" value="Reset" onclick="reset_game()" style="font-size:40;">
