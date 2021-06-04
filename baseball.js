@@ -97,15 +97,15 @@ function result_formatter(s, b)
     }
     else if (b == 0)
     {
-        return s + "S";
+        return s + "◯";
     }
     else if (s == 0)
     {
-        return b + "B";
+        return b + "△";
     }
     else
     {
-        return s + "S" + b + "B";
+        return s + "◯" + b + "△";
     }
 }
 
