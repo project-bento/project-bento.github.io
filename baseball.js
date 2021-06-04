@@ -5,7 +5,6 @@ var game_all_pool = get_pool();
 var game_history = new Array();
 var game_used = new Set();
 var hist = "";
-var numGuessed = 0;
 var potential = new Array();
 
 function is_allowed_number(number)
@@ -223,7 +222,6 @@ function execute()
         var q_input = mainForm.input_Q.value;
         var s_input = Number(mainForm.input_S.value);
         var b_input = Number(mainForm.input_B.value);
-		numGuessed += 1;
 
         if (is_allowed_number(q_input) == false)
         {
@@ -256,10 +254,9 @@ function execute()
         mainForm.input_S.value = "";
         mainForm.input_B.value = "";
 
-		for(var i = 0; i < numGuessed; i++)
-		{
-			hist += "FUCK\n";
-		}
+
+		hist += q_input + " - " + result_formatter(s_input, b_input) + "\n";
+		
 		mainForm.history.value = hist;
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
@@ -290,7 +287,6 @@ function reset_game()
     game_pool = get_pool();
     game_used = new Set();
 	hist = "";
-	numGuessed = 0;
     calc_best_question();
 }
 
