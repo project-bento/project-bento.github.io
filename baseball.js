@@ -95,14 +95,6 @@ function result_formatter(s, b)
     {
         return "X";
     }
-    else if (b == 0)
-    {
-        return s + "◯";
-    }
-    else if (s == 0)
-    {
-        return b + "△";
-    }
     else
     {
         return s + "◯" + b + "△";
