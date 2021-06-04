@@ -255,7 +255,7 @@ function execute()
         mainForm.input_B.value = "";
 
 
-		mainForm.history.value = q_input + " - " + result_formatter(s_input, b_input) + "\n";
+		mainForm.history.value = q_input + " - " + result_formatter(s_input, b_input);
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
         {
