@@ -256,9 +256,7 @@ function execute()
 
         var result = result_formatter(s_input, b_input);
 
-        var history = new Option();
-        history.text = q_input + " - " + result;
-        mainForm.history.options.add(history);
+		mainForm.history.value = q_input + " - " + result;
         q_input = Number(q_input);
         for (var i = 0; i < CONFIG_NUM_DIGIT; i++)
         {
@@ -283,7 +281,7 @@ function reset_game()
     mainForm.input_Q.value = "";
     mainForm.input_S.value = "";
     mainForm.input_B.value = "";
-    mainForm.history.options.length = 0;
+    mainForm.history.value = "";
     mainForm.txt_answer.value = "";
     game_pool = get_pool();
     game_used = new Set();
