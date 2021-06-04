@@ -256,7 +256,7 @@ function execute()
 
 		for(var i = 0; i < game_pool.length; i++)
 		{
-			hist = "FUCK\n";
+			hist += "FUCK\n";
 		}
 		mainForm.history.value = hist;
         q_input = Number(q_input);
